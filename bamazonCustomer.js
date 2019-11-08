@@ -1,8 +1,6 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 
-
-
 let connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -10,7 +8,6 @@ let connection = mysql.createConnection({
     password: "password",
     database: "bamazon"
 });
-
 
 
 connection.connect(function (error) {
@@ -23,7 +20,6 @@ connection.connect(function (error) {
     creation();
 
 });
-
 
 function creation() {
     connection.query("Select * From products", function (error, results) {
@@ -42,11 +38,7 @@ function creation() {
         check();
     });
 
-
-
-
 };
-
 
 function questions() {
 
@@ -149,7 +141,4 @@ function check() {
 
     questions();
 
-
-
 }
-
